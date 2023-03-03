@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import Contact from './contact/Contact'
 import Education from './education/Education'
 import Profile from './Profile'
+import ProfileInfo from './ProfileInfo'
+import Skills from './skills/Skills'
+import WorkExperience from './work_experience/WorkExperience'
 
 export default class Cv extends Component {
   render() {
@@ -13,7 +16,11 @@ export default class Cv extends Component {
           <Education />
         </div>
 
-        <div></div>
+        <div style={{ display: 'flex', flexDirection: 'column'}}>
+          <ProfileInfo />
+          <WorkExperience />
+          <Skills />
+        </div>
       </section>
     )
   }

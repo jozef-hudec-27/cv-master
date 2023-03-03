@@ -17,6 +17,19 @@ p {
   margin: 0;
 }
 
+h2 {
+  text-transform: uppercase;
+  width: 90%;
+  border-bottom: 3px solid currentColor;
+  display: flex;
+  padding: 0 8px;
+  gap: 24px;
+}
+
+h2 svg {
+  color: rgb(87, 200, 234);
+}
+
 #root {
   height: 100vh;
 }
@@ -30,23 +43,29 @@ p {
   aspect-ratio: 1 / 1.4;
   display: grid;
   grid-template-columns: 1fr 1.5fr;
+  width: 50%;
+  margin: 0 auto;
 }
 
 #main {
   height: 100%;
-  display: grid;
-  grid-template-columns: 2fr 3fr 2fr;
-  margin: 8px 0;
+  margin: 8px;
 }
 
 #profile {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 16px;
   justify-content: center;
   background-color: rgb(87, 200, 234);
   flex: 1;
   text-transform: uppercase;
+}
+
+#profile img {
+  width: 224px;
+  border-radius: 999px;
 }
 
 #profile h1 {
@@ -69,17 +88,6 @@ p {
   flex: 1;
 }
 
-#contact h2,
-#education h2 {
-  text-transform: uppercase;
-  width: 90%;
-  border-bottom: 3px solid rgb(252, 255, 254);
-  text-align: center;
-  display: flex;
-  padding: 0 8px;
-  gap: 24px;
-}
-
 .contact-entries,
 .education-entries {
   display: flex;
@@ -94,22 +102,62 @@ p {
   align-items: center;
 }
 
-@media (max-width: 992px) {
-  #main {
-    grid-template-columns: 1fr 3fr 1fr;
-    margin: 8px 8px;
+#profile-info {
+  padding: 16px;
+  flex: 1;
+}
+
+#profile-info p {
+  color: grey;
+  margin-top: 16px;
+}
+
+#work-experience {
+  padding: 16px;
+  flex: 1;
+}
+
+.work-experience-entry {
+  margin-top: 16px;
+}
+
+.work-experience-entry .header {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.work-experience-entry .description {
+  color: grey;
+}
+
+#skills {
+  padding: 16px;
+  flex: 1;
+}
+
+.skills-entries {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 16px;
+}
+
+.skills-entry {
+  border: 1px solid grey;
+  width: fit-content;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background-color: rgb(250, 250, 250);
+  margin-top: 8px;
+}
+
+@media (max-width: 1180px) {
+  #cv {
+    width: 100%;
   }
 }
 
 @media (max-width: 768px) {
-  #main {
-    grid-template-columns: 0fr 3fr 0fr;
-  }
 }
 
 @media (max-width: 576px) {
-  #cv {
-    aspect-ratio: unset;
-    height: 100%;
-  }
 }
