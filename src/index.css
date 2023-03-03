@@ -30,21 +30,18 @@ h2 svg {
   color: rgb(87, 200, 234);
 }
 
-#root {
-  height: 100vh;
-}
-
 .cv-wrapper {
   height: 100%;
 }
 
 #cv {
-  border: 2px solid red;
   aspect-ratio: 1 / 1.4;
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   width: 50%;
   margin: 0 auto;
+  border: 1px solid lightgrey;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
 }
 
 #main {
@@ -61,6 +58,7 @@ h2 svg {
   background-color: rgb(87, 200, 234);
   flex: 1;
   text-transform: uppercase;
+  padding: 16px;
 }
 
 #profile img {
@@ -160,4 +158,8 @@ h2 svg {
 }
 
 @media (max-width: 576px) {
+  #cv {
+    display: flex;
+    flex-direction: column;
+  }
 }
