@@ -30,6 +30,14 @@ h2 svg {
   color: rgb(87, 200, 234);
 }
 
+input {
+  appearance: none;
+  background-color: unset;
+  border: none;
+  outline: none;
+  border-bottom: 2px dashed black;
+}
+
 .cv-wrapper {
   height: 100%;
 }
@@ -71,6 +79,15 @@ h2 svg {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#profile input {
+  max-width: 200px;
+  font-size: 16px;
+}
+
+#profile h1 input {
+  font-size: 48px;
 }
 
 #contact,
@@ -151,6 +168,10 @@ h2 svg {
 @media (max-width: 1180px) {
   #cv {
     width: 100%;
+  }
+
+  #main {
+    padding: 12px;
   }
 }
 

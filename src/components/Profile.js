@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Avatar from '../avatar.jpg'
+import EditableField from './EditableField'
 
 export default class Profile extends Component {
   render() {
@@ -9,9 +10,11 @@ export default class Profile extends Component {
 
         <div>
           <h1>
-            <span>John</span> <span>Doe</span>
+            <EditableField label="First Name" inputType="text" value="John" />
+            <EditableField label="Last Name" inputType="text" value="Doe" />
           </h1>
-          <p>Front-end developer</p>
+
+          <EditableField label="Occupation" inputType="text" value="Front-end developer" />
         </div>
       </section>
     )
