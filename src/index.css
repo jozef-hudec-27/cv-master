@@ -9,3 +9,43 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+#root {
+  height: 100vh;
+}
+
+.cv-wrapper {
+  height: 100%;
+}
+
+#cv {
+  border: 2px solid red;
+  aspect-ratio: 1 / 1.4;
+}
+
+#main {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+  margin: 8px 0;
+}
+
+@media (max-width: 992px) {
+  #main {
+    grid-template-columns: 1fr 3fr 1fr;
+    margin: 8px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  #main {
+    grid-template-columns: 0fr 3fr 0fr;
+  }
+}
+
+@media (max-width: 576px) {
+  #cv {
+    aspect-ratio: unset;
+    height: 100%;
+  }
+}
