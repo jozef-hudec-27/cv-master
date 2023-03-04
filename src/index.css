@@ -83,7 +83,13 @@ button {
 
 #profile img {
   width: 224px;
+  height: 224px;
   border-radius: 999px;
+  cursor: pointer;
+}
+
+#profile img:hover {
+  opacity: 0.9;
 }
 
 #profile h1 {
@@ -150,7 +156,8 @@ button {
   transform: scale(1.2);
 }
 
-#skills button, #skills form {
+#skills button,
+#skills form {
   margin-top: 8px;
 }
 

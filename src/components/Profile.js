@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import Avatar from '../avatar.jpg'
 import EditableField from './EditableField'
+import Avatar from './Avatar'
 
 export default class Profile extends Component {
   render() {
     return (
       <section id="profile">
-        <img src={Avatar} alt="avatar" />
+        <Avatar />
 
         <div>
           <h1>

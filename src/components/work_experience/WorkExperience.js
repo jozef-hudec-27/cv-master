@@ -34,7 +34,7 @@ export default class WorkExperience extends Component {
     const { workExperienceList } = this.state
     const workExperienceEntryFields = [
       { label: 'Company', type: 'text', name: 'company' },
-      { label: 'Title', type: 'text', name: 'title' },
+      { label: 'Position', type: 'text', name: 'position' },
       { label: 'Description', type: 'text', name: 'description' },
       { label: 'From', type: 'number', name: 'from', min: '1900', max: new Date().getFullYear() },
       { label: 'To', type: 'number', name: 'to', min: '1900', max: new Date().getFullYear() },

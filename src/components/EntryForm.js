@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faXmark, faCheck } from '@fortawesome/free-solid-svg-icons'
 
 export default class EntryForm extends Component {
   constructor(props) {
@@ -78,7 +78,7 @@ export default class EntryForm extends Component {
 
         <div>
           <button type="submit" aria-label={`Submit  ${title} form`}>
-            <FontAwesomeIcon icon={faPlus} />
+            <FontAwesomeIcon icon={faCheck} />
           </button>
           <button
             type="button"
