@@ -47,6 +47,7 @@ textarea::placeholder {
 
 button {
   width: fit-content;
+  height: fit-content;
 }
 
 .cv-wrapper {
@@ -133,7 +134,8 @@ button {
 }
 
 #education button,
-#work-experience button {
+#work-experience button,
+#skills button {
   appearance: none;
   border: none;
   cursor: pointer;
@@ -143,8 +145,13 @@ button {
 }
 
 #education button:hover,
-#work-experience button:hover {
+#work-experience button:hover,
+#skills button:hover {
   transform: scale(1.2);
+}
+
+#skills button, #skills form {
+  margin-top: 8px;
 }
 
 #profile-info {
@@ -204,6 +211,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   column-gap: 16px;
+  align-items: center;
 }
 
 .skills-entry {
@@ -213,6 +221,8 @@ button {
   border-radius: 999px;
   background-color: rgb(250, 250, 250);
   margin-top: 8px;
+  display: flex;
+  align-items: center;
 }
 
 .new-entry-form {
