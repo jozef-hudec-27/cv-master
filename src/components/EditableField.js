@@ -28,13 +28,19 @@ export default class EditableField extends Component {
 
     if (isEditing) {
       return (
-        <input
-          type={inputType}
-          value={value}
-          onBlur={this.handleFinishEditing}
-          onChange={this.handleChange}
-          autoFocus
-        />
+        <div>
+          {this.props.isTextarea ? (
+            <textarea value={value} onBlur={this.handleFinishEditing} onChange={this.handleChange} autoFocus></textarea>
+          ) : (
+            <input
+              type={inputType}
+              value={value}
+              onBlur={this.handleFinishEditing}
+              onChange={this.handleChange}
+              autoFocus
+            />
+          )}
+        </div>
       )
     }
 

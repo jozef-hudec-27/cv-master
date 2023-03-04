@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import EditableField from '../EditableField'
 
 export default class ContactEntry extends Component {
   render() {
@@ -10,7 +11,7 @@ export default class ContactEntry extends Component {
 
         <div>
           <h3>{title}</h3>
-          <p>{value}</p>
+          <EditableField label={title} value={value} inputType="text" />
         </div>
       </div>
     )

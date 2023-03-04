@@ -30,12 +30,14 @@ h2 svg {
   color: rgb(87, 200, 234);
 }
 
-input {
+input,
+textarea {
   appearance: none;
   background-color: unset;
   border: none;
   outline: none;
-  border-bottom: 2px dashed black;
+  border-bottom: 2px dashed currentColor;
+  color: inherit;
 }
 
 .cv-wrapper {
@@ -122,9 +124,20 @@ input {
   flex: 1;
 }
 
-#profile-info p {
+#profile-info h2 {
+  margin-bottom: 16px;
+}
+
+#profile-info span {
   color: grey;
-  margin-top: 16px;
+}
+
+#profile-info textarea {
+  color: grey;
+  font-size: 16px;
+  resize: vertical;
+  width: 100%;
+  min-height: 100px;
 }
 
 #work-experience {
