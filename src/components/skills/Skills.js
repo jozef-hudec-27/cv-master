@@ -42,7 +42,7 @@ export default class Skills extends Component {
         </h2>
 
         <div className="skills-entries">
-          <EntryForm fields={skillsEntryFields} onSubmit={this.addSkill} />
+          <EntryForm fields={skillsEntryFields} onSubmit={this.addSkill} title="Skills" />
 
           {skillsList.map((entry, i) => (
             <SkillsEntry key={i} skill={entry.skill} removeSkill={() => this.removeSkill(i)} />

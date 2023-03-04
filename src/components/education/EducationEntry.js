@@ -17,7 +17,11 @@ export default class EducationEntry extends Component {
           </div>
         </div>
 
-        <button style={{ backgroundColor: 'rgb(61, 66, 64)', color: 'white' }} onClick={removeEducation}>
+        <button
+          style={{ backgroundColor: 'rgb(61, 66, 64)', color: 'white' }}
+          onClick={removeEducation}
+          aria-label="Remove education entry"
+        >
           <FontAwesomeIcon icon={faXmark} />
         </button>
       </div>

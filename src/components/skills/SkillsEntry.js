@@ -10,7 +10,7 @@ export default class SkillsEntry extends Component {
       <div className="skills-entry">
         <p>{skill}</p>
 
-        <button style={{ backgroundColor: 'inherit', color: 'grey', marginTop: 'unset' }}>
+        <button style={{ backgroundColor: 'transparent', color: 'grey', marginTop: 'unset' }} aria-label="Remove skill">
           <FontAwesomeIcon icon={faXmark} onClick={removeSkill} />
         </button>
       </div>

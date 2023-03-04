@@ -60,7 +60,7 @@ export default class WorkExperience extends Component {
             />
           ))}
 
-          <EntryForm fields={workExperienceEntryFields} onSubmit={this.addWorkExperience} />
+          <EntryForm fields={workExperienceEntryFields} onSubmit={this.addWorkExperience} title="Work experience" />
         </div>
       </section>
     )

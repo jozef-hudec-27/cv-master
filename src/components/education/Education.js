@@ -55,7 +55,7 @@ export default class Education extends Component {
             />
           ))}
 
-          <EntryForm fields={educationEntryFields} onSubmit={this.addEducation} />
+          <EntryForm fields={educationEntryFields} onSubmit={this.addEducation} title="Education" />
         </div>
       </section>
     )

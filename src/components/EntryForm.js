@@ -48,11 +48,11 @@ export default class EntryForm extends Component {
 
   render() {
     const { fields, isFormVisible } = this.state
-    const { fields: formFields } = this.props
+    const { fields: formFields, title } = this.props
 
     if (!isFormVisible) {
       return (
-        <button onClick={this.toggleFormVisibility}>
+        <button onClick={this.toggleFormVisibility} aria-label={`Add ${title}`}>
           <FontAwesomeIcon icon={faPlus} />
         </button>
       )
@@ -77,7 +77,7 @@ export default class EntryForm extends Component {
         ))}
 
         <div>
-          <button type="submit">
+          <button type="submit" aria-label={`Submit  ${title} form`}>
             <FontAwesomeIcon icon={faPlus} />
           </button>
           <button
@@ -90,6 +90,7 @@ export default class EntryForm extends Component {
                 }, {}),
               }))
             }}
+            aria-label={`Cancel  ${title} form`}
           >
             <FontAwesomeIcon icon={faXmark} />
           </button>
