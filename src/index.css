@@ -132,7 +132,8 @@ button {
   align-items: center;
 }
 
-#education button {
+#education button,
+#work-experience button {
   appearance: none;
   border: none;
   cursor: pointer;
@@ -141,13 +142,15 @@ button {
   transition-duration: 1s;
 }
 
-#education button:hover {
+#education button:hover,
+#work-experience button:hover {
   transform: scale(1.2);
 }
 
 #profile-info {
   padding: 16px;
   flex: 1;
+  text-align: justify;
 }
 
 #profile-info h2 {
@@ -171,10 +174,6 @@ button {
   flex: 1;
 }
 
-.work-experience-entry {
-  margin-top: 16px;
-}
-
 .work-experience-entry .header {
   display: flex;
   justify-content: space-evenly;
@@ -182,6 +181,18 @@ button {
 
 .work-experience-entry .description {
   color: grey;
+  text-align: justify;
+}
+
+.work-experience-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 16px;
+}
+
+.work-experience-entries button {
+  align-self: center;
 }
 
 #skills {

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { faChevronRight, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 export default class WorkExperienceEntry extends Component {
   render() {
-    const { from, to, company, title } = this.props
+    const { from, to, company, title, description, removeWorkExperience } = this.props
 
     return (
       <div className="work-experience-entry">
@@ -19,13 +19,13 @@ export default class WorkExperienceEntry extends Component {
           <p>{`${from} - ${to}`}</p>
         </div>
 
-        <p className="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nibh mi. Maecenas pretium pellentesque
-          velit eget fermentum. Sed lacinia egestas sagittis. Ut congue neque nec tortor sagittis ullamcorper. Proin
-          lorem nibh, placerat eu sem et, interdum finibus sem. In consectetur tincidunt tortor, ac bibendum urna
-          interdum eget. Sed urna nunc, tincidunt sit amet faucibus ac, rhoncus eu sapien. Mauris quis mi eu est
-          ultrices blandit. Nam aliquam purus nec turpis consectetur, pretium sollicitudin erat semper.
-        </p>
+        <div style={{ display: 'flex', gap: '4px', alignItems: 'center', marginTop: '8px' }}>
+          <p className="description">{description}</p>
+
+          <button style={{ color: 'rgb(61, 66, 64)', backgroundColor: 'white' }} onClick={removeWorkExperience}>
+            {<FontAwesomeIcon icon={faXmark} />}
+          </button>
+        </div>
       </div>
     )
   }
