@@ -40,6 +40,15 @@ textarea {
   color: inherit;
 }
 
+input::placeholder,
+textarea::placeholder {
+  color: inherit;
+}
+
+button {
+  width: fit-content;
+}
+
 .cv-wrapper {
   height: 100%;
 }
@@ -112,11 +121,28 @@ textarea {
   gap: 8px;
 }
 
+.education-entries {
+  align-items: center;
+}
+
 .contact-entry,
 .education-entry {
   display: flex;
   gap: 16px;
   align-items: center;
+}
+
+#education button {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(87, 200, 234);
+  color: rgb(61, 66, 64);
+  transition-duration: 1s;
+}
+
+#education button:hover {
+  transform: scale(1.2);
 }
 
 #profile-info {
@@ -176,6 +202,20 @@ textarea {
   border-radius: 999px;
   background-color: rgb(250, 250, 250);
   margin-top: 8px;
+}
+
+.new-entry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.new-entry-form label {
+  display: flex;
+  gap: 8px;
+  font-size: 0.8em;
+  align-items: center;
 }
 
 @media (max-width: 1180px) {

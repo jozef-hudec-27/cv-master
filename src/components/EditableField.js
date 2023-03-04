@@ -56,7 +56,7 @@ export default class EditableField extends Component {
             this.handleStartEditing()
           }
         }}
-        tabIndex="1"
+        tabIndex="0"
       >
         {value || label}
       </span>
