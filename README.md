@@ -13,3 +13,5 @@ CV-master is a React application that allows users to create a CV or resume for 
 ## Notes
 
 This is the first app that I have built using React, and it was designed to provide a foundational understanding of how React works (props, state).
+
+[See it live](https://jozef-hudec-27.github.io/cv-master/)
