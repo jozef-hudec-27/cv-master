@@ -1,6 +1,6 @@
 import Cv from './components/Cv'
 
-function App() {
+export default function App() {
   return (
     <div id="main">
       <div className="column"></div>
@@ -9,5 +9,3 @@ function App() {
     </div>
   )
 }
-
-export default App
