@@ -54,7 +54,7 @@ export default class WorkExperience extends Component {
               from={entry.from}
               to={entry.to}
               company={entry.company}
-              title={entry.title}
+              position={entry.position}
               description={entry.description}
               removeWorkExperience={() => this.removeWorkExperience(i)}
             />

@@ -4,7 +4,7 @@ import { faChevronRight, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 export default class WorkExperienceEntry extends Component {
   render() {
-    const { from, to, company, title, description, removeWorkExperience } = this.props
+    const { from, to, company, position, description, removeWorkExperience } = this.props
 
     return (
       <div className="work-experience-entry">
@@ -12,7 +12,7 @@ export default class WorkExperienceEntry extends Component {
           <FontAwesomeIcon icon={faChevronRight} />
 
           <div>
-            <h3>{title}</h3>
+            <h3>{position}</h3>
             <p>{company}</p>
           </div>
 
