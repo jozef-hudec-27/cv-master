@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 export default function WorkExperienceEntry(props) {
-  const { from, to, company, title, description, removeWorkExperience } = props
+  const { from, to, company, position, description, removeWorkExperience } = props
 
   return (
     <div className="work-experience-entry">
@@ -11,7 +11,7 @@ export default function WorkExperienceEntry(props) {
         <FontAwesomeIcon icon={faChevronRight} />
 
         <div>
-          <h3>{title}</h3>
+          <h3>{position}</h3>
           <p>{company}</p>
         </div>
 

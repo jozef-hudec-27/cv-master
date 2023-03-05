@@ -1,47 +1,39 @@
-import React, { Component } from 'react'
+import React, { useRef, useState } from 'react'
 import avatar from '../avatar.png'
 
-export default class Avatar extends Component {
-  constructor(props) {
-    super(props)
+export default function Avatar() {
+  const inputRef = useRef(null)
+  const [imageSrc, setImageSrc] = useState(avatar)
 
-    this.state = {
-      imageSrc: avatar,
-    }
-
-    this.handleImageChange = this.handleImageChange.bind(this)
-    this.inputRef = React.createRef()
-  }
-
-  handleImageChange(event) {
+  const handleImageChange = (event) => {
     const file = event.target.files[0]
     const reader = new FileReader()
     reader.readAsDataURL(file)
     reader.onload = () => {
-      this.setState({
-        imageSrc: reader.result,
-      })
+      setImageSrc(reader.result)
     }
   }
 
-  render() {
-    return (
-      <div>
-        <img
-          tabIndex="0"
-          src={this.state.imageSrc}
-          alt="avatar"
-          onClick={() => this.inputRef.current.click()}
-          onKeyDown={(e) => {
-            if (e.code === 'Tab') return
-
-            e.preventDefault()
-
-            if (['Enter', 'Space'].includes(e.code)) this.inputRef.current.click()
-          }}
-        />
-        <input type="file" ref={this.inputRef} style={{ display: 'none' }} onChange={this.handleImageChange} />
-      </div>
-    )
+  const handleImageClick = () => {
+    inputRef.current.click()
   }
+
+  return (
+    <div>
+      <img
+        tabIndex="0"
+        src={imageSrc}
+        alt="avatar"
+        onClick={handleImageClick}
+        onKeyDown={(e) => {
+          if (e.code === 'Tab') return
+
+          e.preventDefault()
+
+          if (['Enter', 'Space'].includes(e.code)) handleImageClick()
+        }}
+      />
+      <input type="file" ref={inputRef} style={{ display: 'none' }} onChange={handleImageChange} />
+    </div>
+  )
 }

@@ -1,54 +1,40 @@
-import React, { Component } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLaptop } from '@fortawesome/free-solid-svg-icons'
+import React, { useState } from 'react'
 import SkillsEntry from './SkillsEntry'
 import EntryForm from '../EntryForm'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLaptop } from '@fortawesome/free-solid-svg-icons'
 
-export default class Skills extends Component {
-  constructor(props) {
-    super(props)
+export default function Skills() {
+  const [skillsList, setSkillsList] = useState([])
 
-    this.state = {
-      skillsList: [],
-    }
-
-    this.addSkill = this.addSkill.bind(this)
+  const addSkill = (skill) => {
+    setSkillsList((prevSkillsList) => [...prevSkillsList, skill])
   }
 
-  addSkill(skill) {
-    this.setState((prevState, _) => {
-      const newSkillsList = [...prevState.skillsList, skill]
-      return { skillsList: newSkillsList }
-    })
-  }
-
-  removeSkill(index) {
-    this.setState((prevState, _) => {
-      const newSkillsList = [...prevState.skillsList]
+  const removeSkill = (index) => {
+    setSkillsList((prevSkillsList) => {
+      const newSkillsList = [...prevSkillsList]
       newSkillsList.splice(index, 1)
-      return { skillsList: newSkillsList }
+      return newSkillsList
     })
   }
 
-  render() {
-    const { skillsList } = this.state
-    const skillsEntryFields = [{ label: 'Skill', type: 'text', name: 'skill' }]
+  const skillsEntryFields = [{ label: 'Skill', type: 'text', name: 'skill' }]
 
-    return (
-      <section id="skills">
-        <h2>
-          <FontAwesomeIcon icon={faLaptop} />
-          Skills
-        </h2>
+  return (
+    <section id="skills">
+      <h2>
+        <FontAwesomeIcon icon={faLaptop} />
+        Skills
+      </h2>
 
-        <div className="skills-entries">
-          <EntryForm fields={skillsEntryFields} onSubmit={this.addSkill} title="Skills" />
+      <div className="skills-entries">
+        <EntryForm fields={skillsEntryFields} onSubmit={addSkill} title="Skills" />
 
-          {skillsList.map((entry, i) => (
-            <SkillsEntry key={i} skill={entry.skill} removeSkill={() => this.removeSkill(i)} />
-          ))}
-        </div>
-      </section>
-    )
-  }
+        {skillsList.map((entry, i) => (
+          <SkillsEntry key={i} skill={entry.skill} removeSkill={() => removeSkill(i)} />
+        ))}
+      </div>
+    </section>
+  )
 }

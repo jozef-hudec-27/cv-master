@@ -1,65 +1,41 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 
-export default class EditableField extends Component {
-  constructor(props) {
-    super(props)
+export default function EditableField(props) {
+  const { label, inputType } = props
+  const [isEditing, setIsEditing] = useState(false)
+  const [value, setValue] = useState(props.value)
 
-    this.state = {
-      isEditing: false,
-      value: props.value,
-    }
-  }
+  const handleStartEditing = () => setIsEditing(true)
 
-  handleStartEditing = () => {
-    this.setState({ isEditing: true })
-  }
+  const handleFinishEditing = () => setIsEditing(false)
 
-  handleFinishEditing = () => {
-    this.setState({ isEditing: false })
-  }
+  const handleChange = (event) => setValue(event.target.value)
 
-  handleChange = (event) => {
-    this.setState({ value: event.target.value })
-  }
-
-  render() {
-    const { isEditing, value } = this.state
-    const { label, inputType } = this.props
-
-    if (isEditing) {
-      return (
-        <div>
-          {this.props.isTextarea ? (
-            <textarea value={value} onBlur={this.handleFinishEditing} onChange={this.handleChange} autoFocus></textarea>
-          ) : (
-            <input
-              type={inputType}
-              value={value}
-              onBlur={this.handleFinishEditing}
-              onChange={this.handleChange}
-              autoFocus
-            />
-          )}
-        </div>
-      )
-    }
-
+  if (isEditing) {
     return (
-      <span
-        onClick={this.handleStartEditing}
-        onKeyDown={(e) => {
-          if (e.code === 'Tab') return
-
-          e.preventDefault()
-
-          if (['Enter', 'Space'].includes(e.code)) {
-            this.handleStartEditing()
-          }
-        }}
-        tabIndex="0"
-      >
-        {value || label}
-      </span>
+      <div>
+        {props.isTextarea ? (
+          <textarea value={value} onBlur={handleFinishEditing} onChange={handleChange} autoFocus></textarea>
+        ) : (
+          <input type={inputType} value={value} onBlur={handleFinishEditing} onChange={handleChange} autoFocus />
+        )}
+      </div>
     )
   }
+
+  return (
+    <span
+      onClick={handleStartEditing}
+      onKeyDown={(e) => {
+        if (e.code === 'Tab') return
+
+        e.preventDefault()
+
+        if (['Enter', 'Space'].includes(e.code)) handleStartEditing()
+      }}
+      tabIndex="0"
+    >
+      {value || label}
+    </span>
+  )
 }
