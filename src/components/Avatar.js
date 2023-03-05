@@ -20,19 +20,12 @@ export default function Avatar() {
 
   return (
     <div>
-      <img
-        tabIndex="0"
-        src={imageSrc}
-        alt="avatar"
+      <button
         onClick={handleImageClick}
-        onKeyDown={(e) => {
-          if (e.code === 'Tab') return
-
-          e.preventDefault()
-
-          if (['Enter', 'Space'].includes(e.code)) handleImageClick()
-        }}
-      />
+        style={{ appearance: 'none', border: 'none', background: 'transparent', borderRadius: '999px' }}
+      >
+        <img src={imageSrc} alt="avatar" />
+      </button>
       <input type="file" ref={inputRef} style={{ display: 'none' }} onChange={handleImageChange} />
     </div>
   )
